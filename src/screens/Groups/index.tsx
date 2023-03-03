@@ -28,6 +28,7 @@ export function Groups() {
         )}
         contentContainerStyle={groups.length === 0 && { flex: 1 }}
         ListEmptyComponent={() => <ListEmpty message="Nenhuma turma cadastrada" />}
+        showsVerticalScrollIndicator={false}
       />
 
       <Button
