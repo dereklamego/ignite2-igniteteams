@@ -1,9 +1,10 @@
-import { Players } from '@screens/Players';
-import { StatusBar } from 'react-native';
 import theme from './src/theme';
 import { ThemeProvider } from 'styled-components/native';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { Loading } from '@components/Loading';
+import { Routes } from './src/routes';
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
 
@@ -11,12 +12,12 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar
-        barStyle="light-content"
+        style="light"
         translucent
         backgroundColor="transparent"
       />
       {fontsLoaded ?
-        <Players /> : <Loading />
+        <Routes /> : <Loading />
       }
 
     </ThemeProvider>
